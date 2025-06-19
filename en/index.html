@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Kobza Dictionary">
+    <meta name="description" content="Dictionary for game 'Kobza'">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://igronom.github.io/kobza_dictionary/en"/>
+    <meta property="og:title" content="Kobza Dictionary"/>
+    <meta property="og:description" content="Dictionary for game 'Kobza'"/>
+    <meta property="og:image" content="https://cdn-icons.flaticon.com/svg/8770/8770748.svg?token=exp=1750332029~hmac=1c7ec773d955248edec1b4b0e26781f8"/>
+    <meta property="og:image:width" content="256"/>
+    <meta property="og:image:height" content="256"/>
+
+
+    <title>Kobza Dictionary</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/img/brain-circuit.png" type="image/x-icon">
+</head>
+<body class="dark">
+    <!--the main-->
+    <div class="app">
+        <h1 id="header">Kobza Dictionary</h1>
+        <div class="search_box">
+            <h2 class="search_h2">Search</h2>
+
+            <div class="input_box">
+                <p class="text_base">Found letters</p>
+                <div class="found_letters">
+                    <input type="text" class="found_letter" maxlength="1" tabindex="0" placeholder="?" oninput="fill_fl(0);">
+                    <input type="text" class="found_letter" maxlength="1" tabindex="0" placeholder="?" oninput="fill_fl(1);">
+                    <input type="text" class="found_letter" maxlength="1" tabindex="0" placeholder="?" oninput="fill_fl(2);">
+                    <input type="text" class="found_letter" maxlength="1" tabindex="0" placeholder="?" oninput="fill_fl(3);">
+                    <input type="text" class="found_letter" maxlength="1" tabindex="0" placeholder="?" oninput="fill_fl(4);">
+                </div>
+            </div>
+
+            <div class="input_box">
+                <p class="text_base">Found letters without known location</p>
+                <div class="found_letters">
+                    <input type="text" class="found_letter" maxlength="0" tabindex="0" placeholder="?" onfocus="fill_flwkl(5);" readonly>
+                        <input type="text" class="input_flwkl none" maxlength="33" placeholder="Type here..." oninput="fill_input(6);" onblur="blur_iflwkl(6);">
+                    <input type="text" class="found_letter" maxlength="0" tabindex="0" placeholder="?" onfocus="fill_flwkl(7);" readonly>
+                        <input type="text" class="input_flwkl none" maxlength="33" placeholder="Type here..." oninput="fill_input(8);" onblur="blur_iflwkl(8);">
+                    <input type="text" class="found_letter" maxlength="0" tabindex="0" placeholder="?" onfocus="fill_flwkl(9);" readonly>
+                        <input type="text" class="input_flwkl none" maxlength="33" placeholder="Type here..." oninput="fill_input(10);" onblur="blur_iflwkl(10);">
+                    <input type="text" class="found_letter" maxlength="0" tabindex="0" placeholder="?" onfocus="fill_flwkl(11);" readonly>
+                        <input type="text" class="input_flwkl none" maxlength="33" placeholder="Type here..." oninput="fill_input(12);" onblur="blur_iflwkl(12);">
+                    <input type="text" class="found_letter" maxlength="0" tabindex="0" placeholder="?" onfocus="fill_flwkl(13);" readonly>
+                        <input type="text" class="input_flwkl none" maxlength="33" placeholder="Type here..." oninput="fill_input(14);" onblur="blur_iflwkl(14);">
+                </div>
+            </div>
+
+            <div class="input_box"> 
+                <p class="text_base">Eliminated letters</p>
+                <input type="text" class="input_flwkl" maxlength="33" placeholder="Type here..." oninput="fill_input(15);">
+            </div>
+
+            <div class="buttons_group">
+                <div class="language_button">
+                    <a href="/ua/">    
+                        <img src="/img/Flag_of_Ukraine.png" alt="English" title="English">
+                    </a>
+                </div>
+                <div class="main_group">
+                    <button class="secondary" onclick="clear_all_inputs();">Clear</button>
+                    <button class="primary" onclick="show_results();">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--results-->
+    <div class="result none">
+        <div class="header">
+            <button class="secondary" onclick="back();">Back</button>
+        </div>
+        <div class="words" id="words">
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
